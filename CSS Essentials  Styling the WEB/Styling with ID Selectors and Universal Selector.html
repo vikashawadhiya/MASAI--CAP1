@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>L1 - Styling with ID and Universal Selectors</title>
+    <style>
+        /* Universal selector to remove default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ID selector for h1 */
+        #main-title {
+            font-size: 32px;
+            color: darkblue;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* ID selector for h2 */
+        #subtitle {
+            font-size: 24px;
+            color: darkgreen;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        /* Styling for all paragraphs */
+        p {
+            padding: 10px;
+            border: 1px solid #ccc; /* soft border color */
+            margin: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title">Welcome to My Styled Page</h1>
+    <h2 id="subtitle">Using ID and Universal Selectors</h2>
+
+    <p>This is the first paragraph. It has padding and a soft gray border.</p>
+    <p>This is the second paragraph with similar styling.</p>
+    <p>And this is the third paragraph, equally styled using the paragraph tag.</p>
+
+</body>
+</html>
