@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="main-heading">This is the heading</h1>
+
+  <p>Paragraph 1: DOM is powerful.</p>
+  <p>Paragraph 2: We can manipulate elements.</p>
+
+  <div class="container">
+    <p>This div has class "container"</p>
+  </div>
+
+  <script>
+    // 1. Select <h1> by ID and change its text
+    const heading = document.getElementById("main-heading");
+    heading.textContent = "Welcome to the DOM World!";
+
+    // 2. Select all <p> tags and change their text color to blue
+    const paragraphs = document.getElementsByTagName("p");
+    for (let i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].style.color = "blue";
+    }
+
+    // 3. Use querySelector to select the first .container div and change its background
+    const containerDiv = document.querySelector(".container");
+    containerDiv.style.backgroundColor = "yellow";
+  </script>
+
+</body>
+</html>

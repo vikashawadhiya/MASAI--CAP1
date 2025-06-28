@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive DOM Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 250px;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-right: 10px;
+    }
+
+    #target-box {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: lightgray;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Interactive DOM Example</h2>
+
+  <label>Enter Color Name:</label>
+  <input type="text" id="color-input" placeholder="e.g., red, blue, green" />
+
+  <label>Enter Text Content:</label>
+  <input type="text" id="text-input" placeholder="Type your message here" />
+
+  <button id="change-bg-btn">Change Background</button>
+  <button id="update-text-btn">Update Text</button>
+
+  <div id="target-box">This is a sample content box.</div>
+
+  <script>
+    const colorInput = document.getElementById('color-input');
+    const textInput = document.getElementById('text-input');
+    const box = document.getElementById('target-box');
+    const bgBtn = document.getElementById('change-bg-btn');
+    const textBtn = document.getElementById('update-text-btn');
+
+    bgBtn.addEventListener('click', () => {
+      const color = colorInput.value.trim();
+
+      // Create a dummy element to test the color
+      const test = document.createElement('div');
+      test.style.color = color;
+
+      if (test.style.color === '') {
+        alert("Invalid color name!");
+      } else {
+        box.style.backgroundColor = color;
+      }
+    });
+
+    textBtn.addEventListener('click', () => {
+      const newText = textInput.value.trim();
+      if (newText === '') {
+        alert("Please enter some text!");
+      } else {
+        box.textContent = newText;
+      }
+    });
+  </script>
+
+</body>
+</html>
